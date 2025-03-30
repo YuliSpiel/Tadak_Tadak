@@ -76,3 +76,7 @@ crashlytics-build.properties
 
 # MacOS
 .DS_Store
+
+
+# JetBrains IDE 설정 폴더 무시
+.idea/
