@@ -112,6 +112,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void EndGameSession()
     {
+        Debug.Log("Ending game session");
         if (uiManager != null)
         {
             uiManager.ShowGameOverScreen(Score);
