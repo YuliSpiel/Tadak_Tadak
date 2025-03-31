@@ -76,3 +76,11 @@ crashlytics-build.properties
 
 # MacOS
 .DS_Store
+
+# TextMeshPro
+Assets/TextMesh Pro/Examples/
+Assets/TextMesh Pro/Fonts/
+Assets/TextMesh Pro/Package Resources/
+
+# 패키지 캐시 제거
+Library/PackageCache/com.unity.textmeshpro@*/
