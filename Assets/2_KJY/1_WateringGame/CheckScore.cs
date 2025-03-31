@@ -23,7 +23,7 @@ public class CheckScore : MonoBehaviour
     {
         if (_checkedPlantCount == _plantCount)
         {
-            _game.EndGame();
+            _game.Invoke("EndGame", 0.5f);
         }
     }
 
