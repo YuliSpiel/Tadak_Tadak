@@ -84,7 +84,7 @@ public class Plant : MonoBehaviour
         }
 
         // 일정량의 물을 받으면 성장
-        if (waterAmount >= checkScore.minRange) 
+        if (waterAmount == checkScore.minRange) 
         {
             Grow();
         }
