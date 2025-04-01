@@ -10,6 +10,11 @@ public class UIManager : MonoBehaviour
     
     public LifeUI lifeUI;
 
+    public GameObject gameOverPanel;
+    public GameObject gameClearPanel;
+
+    public TextMeshProUGUI finalScoreText;
+    
     void Awake()
     {
         if (GameManager.Instance != null)
@@ -17,6 +22,8 @@ public class UIManager : MonoBehaviour
             GameManager.Instance.uiManager = this;
             UpdateScore(0);
         }
+        gameOverPanel.SetActive(false);
+        gameClearPanel.SetActive(false);
     }
 
     /// <summary>
@@ -33,9 +40,15 @@ public class UIManager : MonoBehaviour
         lifeUI.UpdateLifeUI(life);
     }
 
-    public void ShowGameOverScreen(int finalScore)
+    public void ShowGameOverPanel()
     {
-        // gameOverScreen.SetActive(true);
+        gameOverPanel.SetActive(true);
         // finalScoreText.text = "Final Score: " + finalScore;
+    }
+    
+    public void ShowGameClearPanel()
+    {
+        gameClearPanel.SetActive(true);
+        finalScoreText.text = "Final Score: " + GameManager.Instance.Score;
     }
 }

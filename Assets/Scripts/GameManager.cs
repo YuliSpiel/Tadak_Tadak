@@ -40,6 +40,10 @@ public class GameManager : MonoBehaviour
             if (uiManager != null)
             {
                 uiManager.UpdateLife(_life);
+                if (_life <= 0)
+                {
+                    GameOver();
+                }
             }
         }
     }
@@ -80,12 +84,15 @@ public class GameManager : MonoBehaviour
     {
         curGameIndex = 0;
         Score = 0;
-        Life = 5;
+        Life = 3;
         NextMinigame();
     }
 
     public void NextMinigame()
     {
+        Debug.Log("Next minigame 여기서 호출");
+        Debug.Log(curGameIndex);
+        Debug.Log(totalMiniGames);
         if (curGameIndex < totalMiniGames)
         {
             minigameManager.LoadMinigame(curGameIndex); //해당 인덱스의 게임을 로드하고
@@ -112,10 +119,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void EndGameSession()
     {
-        Debug.Log("Ending game session");
+        Debug.Log("게임세션 종료");
         if (uiManager != null)
         {
-            uiManager.ShowGameOverScreen(Score);
+            uiManager.ShowGameClearPanel();
         }
     }
 
@@ -124,7 +131,12 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void GameOver()
     {
-        
+        Time.timeScale = 0;
+        Debug.Log("게임 중도 종료");        
+        if (uiManager != null)
+        {
+            uiManager.ShowGameOverPanel();
+        }
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)

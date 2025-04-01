@@ -51,7 +51,7 @@ public class PlantSpawner : MonoBehaviour
     {
         for (int i = 0; i < plantCount; i++)
         {
-            Instantiate(_plantPrefabs[i], _spawnPos.position, Quaternion.identity).GetComponent<Plant>().canvas  = _mainCanvas; ;
+            Instantiate(_plantPrefabs[i], _spawnPos.position, Quaternion.identity, this.transform).GetComponent<Plant>().canvas  = _mainCanvas; ;
             yield return new WaitForSeconds(_interval);
         }
     }

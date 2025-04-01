@@ -21,9 +21,9 @@ public class CheckScore : MonoBehaviour
 
     void Update()
     {
-        if (_checkedPlantCount == _plantCount)
+        if (_checkedPlantCount == _plantCount && GameManager.Instance.Life > 0)
         {
-            _game.Invoke("EndGame", 0.5f);
+            _game.EndGame();
         }
     }
 

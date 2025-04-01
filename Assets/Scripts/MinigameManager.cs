@@ -25,6 +25,7 @@ public class MinigameManager : MonoBehaviour
         if (curMinigame != null)
         {
             Destroy(curMinigame);
+            Debug.Log("Destroy minigame");
         }
 
         GameObject minigamePrefab = minigamePrefabs[index];
