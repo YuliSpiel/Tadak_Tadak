@@ -73,7 +73,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-
 # MacOS
 .DS_Store
 
@@ -84,3 +83,6 @@ Assets/TextMesh Pro/Package Resources/
 
 # 패키지 캐시 제거
 Library/PackageCache/com.unity.textmeshpro@*/
+
+# JetBrains IDE 설정 폴더 무시
+.idea/

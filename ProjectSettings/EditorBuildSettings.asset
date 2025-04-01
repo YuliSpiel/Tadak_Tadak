@@ -9,10 +9,7 @@ EditorBuildSettings:
     path: Assets/Scene/1_TitleScene.unity
     guid: 334e24ddae64446e6a1209ef20f80ffc
   - enabled: 1
-<<<<<<< Updated upstream
-    path: Assets/0_CommonFiles/2_GamePrefabs/2_GameScene.unity
-=======
+
     path: Assets/Scene/2_GameScene.unity
->>>>>>> Stashed changes
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
