@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Plant
+  - WaterDrop
+  - Judges
   layers:
   - Default
   - TransparentFX
@@ -11,14 +14,14 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
   - 
   - 
   - 
@@ -40,4 +43,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 1
+    uniqueID: 805737763
+    locked: 0
+  - name: 2
+    uniqueID: 2716695585
+    locked: 0
+  - name: 3
+    uniqueID: 4226302135
+    locked: 0
+  - name: 4
+    uniqueID: 2781937027
+    locked: 0
+  - name: 5
+    uniqueID: 3477169863
     locked: 0
