@@ -935,7 +935,7 @@ GameObject:
   - component: {fileID: 2118146792143780665}
   - component: {fileID: 4563402244255632325}
   m_Layer: 0
-  m_Name: "\uBC31\uC5C5\uC6A9"
+  m_Name: KJY_BackUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

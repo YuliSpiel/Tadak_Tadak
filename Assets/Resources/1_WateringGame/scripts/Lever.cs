@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -58,12 +59,18 @@ public class Lever : MonoBehaviour
             float speedIncrease = (1 - Mathf.Exp(-releaseTime * accelRate)) * (defaultSpeed - minSpeed);
             curSpeed = minSpeed + speedIncrease; // 지수 함수로 점진적 증가
         }
+    }
+
+    private void LateUpdate()
+    {
         SetHandleAngle();
     }
 
     void SetHandleAngle()
     {
         Debug.Log(_anglePerSpeed * curSpeed);
+        float targetAngle = -_anglePerSpeed * curSpeed;
         _handle.transform.rotation = Quaternion.Euler(0, 0, - _anglePerSpeed * curSpeed);
+        // 뭔가뭔가 부드럽지가 몬함
     }
 }
