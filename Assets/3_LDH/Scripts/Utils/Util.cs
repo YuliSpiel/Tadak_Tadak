@@ -25,13 +25,13 @@ namespace Utils
         /// <summary>
         /// Resource/Prefab 경로 아래의 프리랩을 load하여 인스턴스 생성한다.
         /// </summary>
-        /// <param name="path">Resources/Prefab를 기준으로 한 상대 경로</param>
+        /// <param name="path">Resources/CommonPrefabs를 기준으로 한 상대 경로</param>
         /// <param name="position">새로운 오브젝트의 위치</param>
         /// <param name="parent">새로운 오브젝트의 부모 Transform</param>
         /// <returns></returns>
         public static GameObject Instatiate(string path,  Vector3 position, Transform parent=null )
         {
-            GameObject prefab = Load<GameObject>($"Prefabs/{path}");
+            GameObject prefab = Load<GameObject>($"CommonPrefabs/{path}");
             if (prefab == null)
             {
                 Debug.Log($"Fail to load prefab : {path}");
