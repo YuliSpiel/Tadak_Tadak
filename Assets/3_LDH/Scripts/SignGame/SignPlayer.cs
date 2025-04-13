@@ -37,25 +37,11 @@ namespace MiniGame
             leftHand.GetComponent<IExecutable>().Execute();
 
         }
-
-        private void SpawnPaper()
-        {
-            if (paper != null)
-            {
-                Debug.Log("기존 종이 치우기!");
-                Destroy(paper);
-            }
-            
-            //새 종이 생성
-            paper = Util.Instatiate("MiniGame/SignGame/Paper", paperPosition.position);
-            if(paper==null) Debug.LogError("종이 생성 오류!");
-
-        }
+        
         public void Sign()
         {
             Debug.Log("싸인하기!");
             rightHand.GetComponent<IExecutable>().Execute();
-
         }
         
 

@@ -207,6 +207,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &105860758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4843619702254463204, guid: 7e46f4b0983c44399a12a2e3682c39a8, type: 3}
+  m_PrefabInstance: {fileID: 642829016}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &127698208
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftHand: {fileID: 767295183}
   rightHand: {fileID: 1247764299}
-  paperPosition: {fileID: 1186697419}
+  paperPosition: {fileID: 0}
 --- !u!1 &255297848
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,6 +432,37 @@ MonoBehaviour:
   bindings:
   - key: 304
     playerAction: 0
+--- !u!1 &576217830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 576217831}
+  m_Layer: 0
+  m_Name: PaperSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &576217831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576217830}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.19, y: -2.9064, z: 0}
+  m_LocalScale: {x: 0.9451828, y: 0.9451828, z: 0.9451828}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &642829016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -437,7 +473,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 199535769431469599, guid: 7e46f4b0983c44399a12a2e3682c39a8, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 199535769431469599, guid: 7e46f4b0983c44399a12a2e3682c39a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -457,15 +493,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199535769431469599, guid: 7e46f4b0983c44399a12a2e3682c39a8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 199535769431469599, guid: 7e46f4b0983c44399a12a2e3682c39a8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 199535769431469599, guid: 7e46f4b0983c44399a12a2e3682c39a8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 199535769431469599, guid: 7e46f4b0983c44399a12a2e3682c39a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -570,8 +606,7 @@ Transform:
   m_LocalPosition: {x: -4.7999997, y: -2.5199, z: 0}
   m_LocalScale: {x: 0.7563032, y: 0.7580739, z: 0.7377848}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1186697419}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -798,37 +833,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &1186697418
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1186697419}
-  m_Layer: 0
-  m_Name: PaperSpawnPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1186697419
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1186697418}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.73, y: 1.01, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 767295185}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1247360395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,6 +1054,8 @@ MonoBehaviour:
   player1Config: {fileID: 404670365}
   player2Config: {fileID: 310884703}
   signPlayerAction: {fileID: 127698210}
+  paperSpawnPosition: {fileID: 576217831}
+  currentPaper: {fileID: 105860758}
 --- !u!1 &1557274504
 GameObject:
   m_ObjectHideFlags: 0

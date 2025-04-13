@@ -9,7 +9,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowPaper
+    m_ConditionEvent: SubmitPaper
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7112165172851767249}
@@ -34,7 +34,7 @@ AnimatorController:
   m_Name: Anim_LeftHand
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: ThrowPaper
+  - m_Name: SubmitPaper
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
