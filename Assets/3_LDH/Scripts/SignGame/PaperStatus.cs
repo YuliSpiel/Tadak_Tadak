@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using MiniGame;
 using UnityEngine;
 
 public class PaperStatus : MonoBehaviour
@@ -17,9 +18,11 @@ public class PaperStatus : MonoBehaviour
         
     }
 
-    private void DestroyPaper()
+    private void OnSubmitEnd()
     {
-        Destroy(gameObject);
+        //종이 제출이 끝났음
+        SignMiniGame.Manager.OnPaperSubmitted(this);
+        
     }
 
     private void OnDestroy()

@@ -16,6 +16,8 @@ namespace MiniGame
         [SerializeField] private SignPlayer signPlayerAction;
         //[SerializeField] private SignPlayer signPlayer2Action;
         
+        
+        #region Paper
         //종이 프리팹
         private GameObject paperPrefab;
         //종이 생성 위치
@@ -30,7 +32,7 @@ namespace MiniGame
                 if (currentPaper == null)
                 {
                     //페이퍼 생성
-                    currentPaper = Instantiate(paperPrefab, paperSpawnPosition);
+                    SpawnNewPaper();
                 }
 
                 return currentPaper;
@@ -40,13 +42,40 @@ namespace MiniGame
                 currentPaper = value;
             }
         }
+
+        public event Action<PaperStatus> PaperSubmitted;
         
-        
+        #endregion
         //Face UI
         //Canvas Object -> Prefab으로 삽입 처리해야함
         private Image faceImage;
+
+
+        public void OnPaperSubmitted(PaperStatus paper)
+        {
+            if (currentPaper != paper.gameObject)
+            {
+                Debug.LogError("오류");
+            }
+            //결과 판단
+            
+            //face ui 설정
+            
+            //새로운 종이 생성
+            SpawnNewPaper();
+            //그 외 이벤트 호출
+            PaperSubmitted?.Invoke(paper);
+            //기존 종이 파과
+            Destroy(paper.gameObject, 0.3f);
+        }
+
+        private void SpawnNewPaper()
+        {
+            currentPaper = Instantiate(paperPrefab, paperSpawnPosition);
+        }
         
         
+        #region GameProcess
         public override void Init()
         {
             //플레이어 초기화 (키-액션 맵핑)
@@ -58,6 +87,13 @@ namespace MiniGame
 
 
         }
+        
+        
+        
+        
+        
+        
+        
 
         public override void StartGame()
         {
@@ -79,7 +115,7 @@ namespace MiniGame
         {
             
         }
-
+        #endregion
    
     }
 }
