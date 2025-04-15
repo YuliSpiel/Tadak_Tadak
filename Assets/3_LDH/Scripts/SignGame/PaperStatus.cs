@@ -18,9 +18,14 @@ public class PaperStatus : MonoBehaviour
         
     }
 
-    private void OnSubmitEnd()
+    private void OnSubmit()
     {
-        //종이 제출이 끝났음
+        foreach (var sign in GetComponentsInChildren<SignLine>())
+        {
+            sign.StartShirink();
+        }
+        
+        //종이 제출이 끝났음을 알림
         SignMiniGame.Manager.OnPaperSubmitted(this);
         
     }

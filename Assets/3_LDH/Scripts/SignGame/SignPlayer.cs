@@ -11,12 +11,6 @@ namespace MiniGame
         [Header("게임 오브젝트")]
         [SerializeField] private GameObject leftHand;
         [SerializeField] private GameObject rightHand;
-
-        private GameObject paper;
-
-
-        [SerializeField] private Transform paperPosition;
-        
         
 
         public Dictionary<Define.PlayerAction, Action> GetActionMap()

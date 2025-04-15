@@ -71,8 +71,12 @@ namespace MiniGame
 
         private void SpawnNewPaper()
         {
-            currentPaper = Instantiate(paperPrefab, paperSpawnPosition.position, Quaternion.identity);
-            currentPaper.transform.SetParent(paperSpawnPosition, true);
+            currentPaper = Instantiate(paperPrefab, paperSpawnPosition);
+            currentPaper.transform.localPosition = Vector3.zero;
+            currentPaper.transform.localRotation = Quaternion.identity;
+            
+
+
 
         }
         

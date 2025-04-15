@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using MiniGame;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
 /// <summary>
@@ -23,18 +21,17 @@ public class PaperSubmitter : MonoBehaviour, IExecutable
 
     public void Execute()
     {
-        OnSubmit();
-    }
-
-    private void OnSubmit()
-    {
         if (isSubmitting)
         {
             Debug.Log("제출 중인 상태입니다.");
             return;
         }
-
         isSubmitting = true;
+        ExecuteSubmission();
+    }
+
+    private void ExecuteSubmission()
+    {
         //왼손 애니메이션 실행
         anim_leftHand.SetTrigger("SubmitPaper");
         
