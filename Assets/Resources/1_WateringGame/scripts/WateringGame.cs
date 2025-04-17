@@ -17,7 +17,7 @@ public class WateringGame : MinigameBase
     public float destroyDelay;
     public override void StartGame()
     {
-        plantSpawner.SpawnPlant();
+        plantSpawner.StartSpawnPlant();
     }
 
     // 종료조건 : 마지막 화분의 판정이 끝났을 때
