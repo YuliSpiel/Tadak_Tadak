@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,31 @@ namespace MiniGame
 {
     public abstract class BaseMiniGame : MonoBehaviour
     {
+
+        #region Singleton
+
+        //씬 한정 싱글톤
+        public static BaseMiniGame Manager { get; private set; }
+        protected virtual void Awake()
+        {
+            if (Manager != null && Manager != this)
+            {
+                //씬에서 하나만 있도록 한다.
+                Destroy(this);
+                return;
+            }
+
+            Manager = this;
+        }
+
+        private void OnDestroy()
+        {
+            if (Manager == this) Manager = null;
+        }
+
+        #endregion
+        
+        
         //플레이어1, 2 키 바인딩을 위한 변수
         public PlayerInputConfig player1Config;
         public PlayerInputConfig player2Config;
@@ -20,6 +46,7 @@ namespace MiniGame
         //protected IPlayer player1;
         //protected IPlayer player2;
 
+       
 
         //게임 초기화
         public virtual void Init()
