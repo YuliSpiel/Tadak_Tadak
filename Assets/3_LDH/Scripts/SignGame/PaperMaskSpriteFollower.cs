@@ -20,6 +20,5 @@
         private void LateUpdate()
         {
             selfSprite.sprite = targetSprite.sprite;
-            Debug.Log($"selfSprite:{selfSprite.sprite.name},  targetSprite : {targetSprite.sprite.name} " );
         }
     }

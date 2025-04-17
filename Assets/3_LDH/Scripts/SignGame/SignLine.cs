@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,16 @@ using UnityEngine.Serialization;
 public class SignLine : MonoBehaviour
 {
     [SerializeField] private float duration;
-    [FormerlySerializedAs("ratio")] public float shrinkRatio;
+    public float shrinkRatio;
+
+    public bool IsComplete { get; private set; } = false;
+    private Animator anim_signLine;
+
+    private void Start()
+    {
+        anim_signLine = GetComponent<Animator>();
+    }
+
     public void StartShirink()
     {
         StartCoroutine(ShrinkRoutine());
@@ -26,5 +36,26 @@ public class SignLine : MonoBehaviour
         }
 
         transform.localScale = targetScale;
+    }
+
+
+    private void OnSignCompelte()
+    {
+        IsComplete = true;
+        PaperStatus paper = GetComponentInParent<PaperStatus>();
+        if (paper != null)
+        {
+            paper.State = PaperState.Signed;
+            Debug.Log($"사인 끝났나? : {IsComplete}, paper 상태 : {paper.State.ToString()}");
+        }
+    }
+
+
+    public void ForceStopDrawing()
+    {
+        if (!IsComplete)
+        {
+            anim_signLine.speed = 0f; // 애니메이션 즉시 정지
+        }
     }
 }

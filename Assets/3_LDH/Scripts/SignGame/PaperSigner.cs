@@ -62,15 +62,17 @@ public class PaperSigner : MonoBehaviour, IExecutable
         //사인을 생성
         signLine = Instantiate(signLinePrefab, signLineSpawnPosition.position, Quaternion.identity);
         
-        //사인 계층 구조..? 계층 종속성 관리....???????
+        //사인 종속성 관리
         GameObject paper = SignMiniGame.Manager.CurrentPaper;
         if (paper == null)
         {
+            
             signLine.transform.SetParent(transform,true);
             signLine.transform.SetAsLastSibling();
         }
         else
         {
+            paper.GetComponent<PaperStatus>().State = PaperState.Signing;
             signLine.transform.SetParent(paper.transform,true);
             
         }

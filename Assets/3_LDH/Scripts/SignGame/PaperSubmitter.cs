@@ -36,7 +36,12 @@ public class PaperSubmitter : MonoBehaviour, IExecutable
         anim_leftHand.SetTrigger("SubmitPaper");
         
         //종이(현재 종이) 제출 애니메이션 실행
-        SignMiniGame.Manager.CurrentPaper.GetComponent<Animator>().SetTrigger("Submit");
+        PaperStatus paperStatus = SignMiniGame.Manager.CurrentPaper.GetComponent<PaperStatus>();
+        if (paperStatus.State== PaperState.Signing)
+        {
+            paperStatus.State = PaperState.Torn;
+        }
+        paperStatus.GetComponent<Animator>().SetTrigger("Submit");
         
     }
     
@@ -44,5 +49,6 @@ public class PaperSubmitter : MonoBehaviour, IExecutable
     {
         isSubmitting = false;
     }
-
+    
+    
 }

@@ -46,10 +46,13 @@ namespace MiniGame
         public event Action<PaperStatus> PaperSubmitted;
         
         #endregion
-        //Face UI
-        //Canvas Object -> Prefab으로 삽입 처리해야함
-        private Image faceImage;
-
+        
+        //정답 판정
+        [SerializeField] private bool isSuccess = false;
+        
+        //Balloon Emotion UI
+        [SerializeField] private UI_BalloonEmotion balloonEmotion;
+        
 
         public void OnPaperSubmitted(PaperStatus paper)
         {
@@ -57,9 +60,26 @@ namespace MiniGame
             {
                 Debug.LogError("오류");
             }
-            //결과 판단
             
-            //face ui 설정
+            //결과 판단
+            PaperStatus curPaperStatus = currentPaper.GetComponent<PaperStatus>();
+            Debug.Log($"current papaer state : {curPaperStatus.State.ToString()}");
+            
+            if (curPaperStatus.State == PaperState.Signed)
+            {
+                //성공
+                isSuccess = true;
+            }
+            else
+            {
+                //그 외는 실패
+                isSuccess = false;
+            }
+            
+            Debug.Log($"issuccess : {isSuccess}");
+            
+            //ballon emotion 설정
+            balloonEmotion.ChangeEmotion(isSuccess);
             
             //새로운 종이 생성
             SpawnNewPaper();
@@ -67,6 +87,10 @@ namespace MiniGame
             PaperSubmitted?.Invoke(paper);
             //기존 종이 파과
             Destroy(paper.gameObject, 0.3f);
+            
+            
+            //게임 턴 init
+            Invoke("InitGameTrun",1f);
         }
 
         private void SpawnNewPaper()
@@ -75,9 +99,6 @@ namespace MiniGame
             currentPaper.transform.localPosition = Vector3.zero;
             currentPaper.transform.localRotation = Quaternion.identity;
             
-
-
-
         }
         
         
@@ -94,13 +115,6 @@ namespace MiniGame
 
         }
         
-        
-        
-        
-        
-        
-        
-
         public override void StartGame()
         {
             Debug.Log("게임을 시작합니다.");
@@ -119,6 +133,15 @@ namespace MiniGame
 
         public override void EndGame()
         {
+            
+        }
+
+
+        public void InitGameTrun()
+        {
+            //ui 초기화
+            balloonEmotion.ResetEmotion();
+            
             
         }
         #endregion
