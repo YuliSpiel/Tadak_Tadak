@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using MiniGame;
 using UnityEngine;
-
+using DG.Tweening;
 public class KiwiMiniGame : BaseMiniGame
 {
     //싱글톤
-    public static new KiwiMiniGame Manager => BaseMiniGame.Manager as KiwiMiniGame;
+    public static KiwiMiniGame Manager => GameManager.Instance.minigameManager.CurMinigame.GetComponent<KiwiMiniGame>();
     
     //플레이어
     [SerializeField] private KiwiPlayer kiwiPlayerAction;
@@ -16,8 +16,13 @@ public class KiwiMiniGame : BaseMiniGame
     [SerializeField] private KiwiController rightKiwi;
     
     
+    //플래그
+    private bool canJudge = true;
+    
     //ui
     [SerializeField] private GameObject successPanel;
+
+    [SerializeField] private int rewardScore = 10;
     
     
     
@@ -25,11 +30,24 @@ public class KiwiMiniGame : BaseMiniGame
     {
         if (!leftKiwi.IsStopped || !rightKiwi.IsStopped) return;
 
-        if (leftKiwi.CurrentSprite == rightKiwi.CurrentSprite)
+        if (canJudge)
         {
-            Debug.Log("성공");
-            EndGame();
+            if (leftKiwi.CurrentSprite == rightKiwi.CurrentSprite)
+            {
+                Debug.Log("성공");
+                GameManager.Instance.AddScore(rewardScore);
+                EndGame();
+            }
+            else
+            {
+                Debug.Log("실패");
+                GameManager.Instance.Life--;
+            }
+
+            canJudge = false;
+
         }
+       
     }
     
     
@@ -42,27 +60,37 @@ public class KiwiMiniGame : BaseMiniGame
         player = kiwiPlayerAction as IPlayer;
         base.Init();
         
-
     }
     
     public override void StartGame()
     {
-        Debug.Log("게임을 시작합니다.");
+        Init();
     }
 
     public override void UpdateGame()
     {
+        
+        if (!leftKiwi.IsStopped || !rightKiwi.IsStopped)
+        {
+            Debug.Log("판정 가능해짐");
+            canJudge = true; // 다시 시도 가능해짐
+        }
+        
         CheckSuccessCondition();
     }
-    
+
+
+
     public override void EndGame()
     {
         isSuccess = true;
         isFinished = true;
         
         successPanel?.SetActive(true);
+        StartCoroutine(CompleteGameWithDelay(1f));
+
     }
-    
+        
     #endregion
     
 }

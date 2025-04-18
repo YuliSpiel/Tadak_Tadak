@@ -7,31 +7,31 @@ using UnityEngine;
 
 namespace MiniGame
 {
-    public abstract class BaseMiniGame : MonoBehaviour
+    public abstract class BaseMiniGame : MinigameBase
     {
-
-        #region Singleton
-
-        //씬 한정 싱글톤
-        public static BaseMiniGame Manager { get; private set; }
-        protected virtual void Awake()
-        {
-            if (Manager != null && Manager != this)
-            {
-                //씬에서 하나만 있도록 한다.
-                Destroy(this);
-                return;
-            }
-
-            Manager = this;
-        }
-
-        private void OnDestroy()
-        {
-            if (Manager == this) Manager = null;
-        }
-
-        #endregion
+        //싱글톤 로직 제거
+        // #region Singleton
+        //
+        // //씬 한정 싱글톤
+        // public static BaseMiniGame Manager { get; private set; }
+        // protected virtual void Awake()
+        // {
+        //     if (Manager != null && Manager != this)
+        //     {
+        //         //씬에서 하나만 있도록 한다.
+        //         Destroy(this);
+        //         return;
+        //     }
+        //
+        //     Manager = this;
+        // }
+        //
+        // private void OnDestroy()
+        // {
+        //     if (Manager == this) Manager = null;
+        // }
+        //
+        // #endregion
         
         
         //플레이어1, 2 키 바인딩을 위한 변수
@@ -71,23 +71,17 @@ namespace MiniGame
             isSuccess = false;
             isFinished = false;
         }
-
-        //게임 시작
-        public abstract void StartGame();
+        
 
         //매 프레임 처리
         public abstract void UpdateGame();
 
-        //게임 종료 처리
-        public abstract void EndGame();
-
-
-
+        
         //테스트를 위한 임시 이벤트 함수 (GameManager로 이동 예정
         private void Start()
         {
-            Init();
-            StartGame();
+            //Init();
+            // StartGame();
         }
 
         private void Update()
@@ -100,5 +94,13 @@ namespace MiniGame
             player2Config.HandleInput();
             UpdateGame();
         }
+
+
+        public virtual IEnumerator CompleteGameWithDelay(float delay = 0.5f)
+        {
+            yield return new WaitForSeconds(delay);
+            CompleteGame();
+        }
+        
     }
 }
