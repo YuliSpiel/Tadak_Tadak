@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
     {
         curGameIndex = 0;
         Score = 0;
-        Life = 3;
+        Life = 5;
         NextMinigame();
     }
 

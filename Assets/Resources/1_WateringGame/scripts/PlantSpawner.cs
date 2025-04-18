@@ -29,12 +29,12 @@ public class PlantSpawner : MonoBehaviour
         _interval = game.plantSpawnInterval;
     }
 
-    public void SpawnPlant()
+    public void StartSpawnPlant()
     {
-        StartCoroutine(SpawnCoroutine());
+        StartCoroutine(SpawnPlants());
     }
 
-    private IEnumerator SpawnCoroutine()
+    private IEnumerator SpawnPlants()
     {
         for (int i = 0; i < plantCount; i++)
         {
