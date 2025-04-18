@@ -6,6 +6,7 @@ namespace MiniGame
 {
     public interface IPlayer
     {
-        Dictionary<Define.PlayerAction, Action> GetActionMap();
+        Dictionary<Define.PlayerAction, Action> GetKeyDownActionMap();
+        Dictionary<Define.PlayerAction, Action> GetKeyUpActionMap();
     }
 }

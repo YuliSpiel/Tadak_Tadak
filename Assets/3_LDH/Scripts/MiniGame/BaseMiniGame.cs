@@ -52,8 +52,11 @@ namespace MiniGame
         public virtual void Init()
         {
             //플레이어 키-액션 설정
-            player1Config.RegisterActions(player.GetActionMap());
-            player2Config.RegisterActions(player.GetActionMap());
+            player1Config.RegisterKeyDownActions(player.GetKeyDownActionMap());
+            player1Config.RegisterKeyUpActions(player.GetKeyDownActionMap());
+            player2Config.RegisterKeyDownActions(player.GetKeyDownActionMap());
+            player2Config.RegisterKeyUpActions(player.GetKeyDownActionMap());
+            
         }
 
         //게임 시작
