@@ -13,7 +13,7 @@ namespace MiniGame
         [SerializeField] private GameObject rightHand;
         
 
-        public Dictionary<Define.PlayerAction, Action> GetActionMap()
+        public Dictionary<Define.PlayerAction, Action> GetKeyDownActionMap()
         {
             return new()
             {
@@ -21,8 +21,13 @@ namespace MiniGame
                 { Define.PlayerAction.Sign, Sign }
             };
         }
-        
-        
+
+        public Dictionary<Define.PlayerAction, Action> GetKeyUpActionMap()
+        {
+            return new();
+        }
+
+
         #region Actions
 
         public void GetPaper()

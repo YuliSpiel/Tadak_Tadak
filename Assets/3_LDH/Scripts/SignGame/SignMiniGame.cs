@@ -45,10 +45,6 @@ namespace MiniGame
         
         #endregion
         
-        //정답 판정
-        [SerializeField] private bool isSuccess = false;
-        
-        
         //event
         public event Action<bool> OnPaperSubmitted;
         public event Action OnTurnInit;
@@ -121,15 +117,9 @@ namespace MiniGame
 
         public override void UpdateGame()
         {
-           player1Config.HandleInput();
-           player2Config.HandleInput();
+           
         }
-
-        public override bool IsGameFinished()
-        {
-            return false;
-        }
-
+        
         public override void EndGame()
         {
             
