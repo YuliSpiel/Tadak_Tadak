@@ -94,5 +94,13 @@ namespace MiniGame
             player2Config.HandleInput();
             UpdateGame();
         }
+
+
+        public virtual IEnumerator CompleteGameWithDelay(float delay = 0.5f)
+        {
+            yield return new WaitForSeconds(delay);
+            CompleteGame();
+        }
+        
     }
 }

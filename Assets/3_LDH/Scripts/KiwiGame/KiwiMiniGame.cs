@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using MiniGame;
 using UnityEngine;
-
+using DG.Tweening;
 public class KiwiMiniGame : BaseMiniGame
 {
     //싱글톤
@@ -16,6 +16,9 @@ public class KiwiMiniGame : BaseMiniGame
     [SerializeField] private KiwiController rightKiwi;
     
     
+    //플래그
+    private bool canJudge = true;
+    
     //ui
     [SerializeField] private GameObject successPanel;
     
@@ -25,11 +28,23 @@ public class KiwiMiniGame : BaseMiniGame
     {
         if (!leftKiwi.IsStopped || !rightKiwi.IsStopped) return;
 
-        if (leftKiwi.CurrentSprite == rightKiwi.CurrentSprite)
+        if (canJudge)
         {
-            Debug.Log("성공");
-            EndGame();
+            if (leftKiwi.CurrentSprite == rightKiwi.CurrentSprite)
+            {
+                Debug.Log("성공");
+                EndGame();
+            }
+            else
+            {
+                Debug.Log("실패");
+                GameManager.Instance.Life--;
+            }
+
+            canJudge = false;
+
         }
+       
     }
     
     
@@ -51,6 +66,13 @@ public class KiwiMiniGame : BaseMiniGame
 
     public override void UpdateGame()
     {
+        
+        if (!leftKiwi.IsStopped || !rightKiwi.IsStopped)
+        {
+            Debug.Log("판정 가능해짐");
+            canJudge = true; // 다시 시도 가능해짐
+        }
+        
         CheckSuccessCondition();
     }
 
@@ -61,11 +83,11 @@ public class KiwiMiniGame : BaseMiniGame
         isSuccess = true;
         isFinished = true;
         
-        // successPanel?.SetActive(true);
-        
-        CompleteGame();
+        successPanel?.SetActive(true);
+        StartCoroutine(CompleteGameWithDelay(1f));
+
     }
-    
+        
     #endregion
     
 }
