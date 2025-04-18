@@ -885,7 +885,7 @@ GameObject:
   - component: {fileID: 2056373750421809412}
   - component: {fileID: 4350884072425576172}
   m_Layer: 0
-  m_Name: 3_SignMiniGame
+  m_Name: 2_SignMiniGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
