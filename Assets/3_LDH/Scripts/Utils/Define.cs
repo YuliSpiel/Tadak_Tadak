@@ -5,7 +5,9 @@ namespace Utils
         public enum PlayerAction
         {
             GetPaper,
-            Sign
+            Sign,
+            LeftKiwiContorl,
+            RightKiwiControl,
         }
     }
 }

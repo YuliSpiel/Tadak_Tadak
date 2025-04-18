@@ -11,13 +11,14 @@ namespace MiniGame
         public List<KeyActionBinding> bindings = new(); 
         
         //내부에서 키-액션 맵핑해주는 딕셔너리
-        private Dictionary<KeyCode, Action> keyActionMap = new();
+        private Dictionary<KeyCode, Action> keyDownActionMap = new();
+        private Dictionary<KeyCode, Action> keyUpActionMap = new();
         
 
         //외부에서 키-액션 등록하기 위한 메소드
-        public void RegisterActions(Dictionary<Define.PlayerAction, Action> availableActions)
+        public void RegisterKeyDownActions(Dictionary<Define.PlayerAction, Action> availableActions)
         {
-            keyActionMap.Clear();
+            keyDownActionMap.Clear();
 
             foreach (var bind in bindings)
             {
@@ -25,14 +26,30 @@ namespace MiniGame
                 //binding에 있는 액션 이름이 availableActions에 있다면 지정된 키와 액션을 keyActionMap에 저장한다.
                 if (availableActions.TryGetValue(bind.playerAction, out var action))
                 {
-                    if(keyActionMap.ContainsKey(bind.key))
-                        keyActionMap[bind.key] += action; // 이미 있으면 체인 추가
+                    if(keyDownActionMap.ContainsKey(bind.key))
+                        keyDownActionMap[bind.key] += action; // 이미 있으면 체인 추가
                     else
-                        keyActionMap[bind.key] = action; // 없으면 최초 등록
+                        keyDownActionMap[bind.key] = action; // 없으면 최초 등록
                 }
                 else
                 {
                     Debug.LogWarning($"Action '{bind.playerAction}' not found.");
+                }
+            }
+        }
+
+        
+        public void RegisterKeyUpActions(Dictionary<Define.PlayerAction, Action> actions)
+        {
+            keyUpActionMap.Clear();
+            foreach (var bind in bindings)
+            {
+                if (actions.TryGetValue(bind.playerAction, out var action))
+                {
+                    if (keyUpActionMap.ContainsKey(bind.key))
+                        keyUpActionMap[bind.key] += action;
+                    else
+                        keyUpActionMap[bind.key] = action;
                 }
             }
         }
@@ -42,12 +59,19 @@ namespace MiniGame
         //게임에서 계속 업데이트
         public void HandleInput()
         {
-            foreach (var keyAction in keyActionMap)
+            foreach (var kv in keyDownActionMap)
             {
-                if (Input.GetKeyDown(keyAction.Key))
+                if (Input.GetKeyDown(kv.Key))
                 {
-                    //해당 키가 눌렸으면 맵핑된 action을 호출
-                    keyAction.Value?.Invoke();
+                    kv.Value?.Invoke();
+                }
+            }
+
+            foreach (var kv in keyUpActionMap)
+            {
+                if (Input.GetKeyUp(kv.Key))
+                {
+                    kv.Value?.Invoke();
                 }
             }
         }
