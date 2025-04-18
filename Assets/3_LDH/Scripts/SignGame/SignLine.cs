@@ -46,7 +46,7 @@ public class SignLine : MonoBehaviour
         if (paper != null)
         {
             paper.State = PaperState.Signed;
-            Debug.Log($"사인 끝났나? : {IsComplete}, paper 상태 : {paper.State.ToString()}");
+            Debug.Log($"is sign end? : {IsComplete}, paper state : {paper.State.ToString()}");
         }
     }
 
