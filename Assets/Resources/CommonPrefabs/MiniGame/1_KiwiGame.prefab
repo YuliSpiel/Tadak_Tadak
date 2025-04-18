@@ -201,7 +201,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1608040515842806265}
+  - {fileID: 7291675116544189225}
   m_Father: {fileID: 4677200111260967132}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -429,6 +429,7 @@ Transform:
   - {fileID: 3523694315528154752}
   - {fileID: 2075555003535404315}
   - {fileID: 2258118633737473439}
+  - {fileID: 7349124968726935442}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -449,7 +450,8 @@ MonoBehaviour:
   kiwiPlayerAction: {fileID: 4781903713516604812}
   leftKiwi: {fileID: 4478976462566024888}
   rightKiwi: {fileID: 5376396106220982977}
-  successPanel: {fileID: 2520051128034475124}
+  successPanel: {fileID: 5879685230956498596}
+  rewardScore: 10
 --- !u!1 &6383875606387347032
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,13 +762,13 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e46377a00e14146f8b86a75e6b276b67, type: 3}
---- !u!224 &1608040515842806265 stripped
+--- !u!1 &5879685230956498596 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1008011379271674090, guid: e46377a00e14146f8b86a75e6b276b67, type: 3}
+  m_PrefabInstance: {fileID: 6658004232669488718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &7291675116544189225 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4131138346588308839, guid: e46377a00e14146f8b86a75e6b276b67, type: 3}
-  m_PrefabInstance: {fileID: 3387876955064571038}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2520051128034475124 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9123446997936691770, guid: b0137ee1d589541a794c0ecbe84496fd, type: 3}
   m_PrefabInstance: {fileID: 6658004232669488718}
   m_PrefabAsset: {fileID: 0}
