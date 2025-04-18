@@ -63,9 +63,6 @@ MonoBehaviour:
   maxRange: 20
   plantSpawnInterval: 5
   destroyDelay: 2
-  mainCanvas: {fileID: 4826936921598087433}
-  CountText: {fileID: 0}
-  successPanel: {fileID: 4578225749665265651}
 --- !u!1001 &2106367711637416506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -649,16 +646,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1981463971244004124, guid: 1e6b53f5c97ae45b1818dbbb8a36200d, type: 3}
-    m_RemovedGameObjects:
-    - {fileID: 1981463971879383702, guid: 1e6b53f5c97ae45b1818dbbb8a36200d, type: 3}
-    - {fileID: 1981463971456071352, guid: 1e6b53f5c97ae45b1818dbbb8a36200d, type: 3}
-    - {fileID: 1981463971937789420, guid: 1e6b53f5c97ae45b1818dbbb8a36200d, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 1981463971244004125, guid: 1e6b53f5c97ae45b1818dbbb8a36200d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 801866556261145214}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e6b53f5c97ae45b1818dbbb8a36200d, type: 3}
 --- !u!223 &4826936921598087433 stripped

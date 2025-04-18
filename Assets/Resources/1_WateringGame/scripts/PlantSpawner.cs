@@ -1,10 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
-using UnityEngine.UI;
 
 public class PlantSpawner : MonoBehaviour
 {
@@ -20,8 +18,6 @@ public class PlantSpawner : MonoBehaviour
     
     // UI 관련
     public Canvas mainCanvas;
-    public TextMeshProUGUI CountText;
-
     public float dropCountOffsetX; // 현재 물방울 수에 대한 X방향 오프셋
     public float dropCountOffsetY; // 현재 물방울 수에 대한 Y방향 오프셋
     
