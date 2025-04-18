@@ -9,10 +9,10 @@ public class CheckPoint : MonoBehaviour
     {
         if (col.CompareTag("Cat"))
         {
-            _game.ShowSuccessPanel();
+            Debug.Log("충돌햇서요");
             Destroy(gameObject);
             GameManager.Instance.Score += 10;
-            _game.Invoke("EndGame", 2f);
+            _game.Invoke("EndGame", 3f);
         }
     }
 }
