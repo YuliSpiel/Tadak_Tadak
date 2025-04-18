@@ -28,7 +28,7 @@ public class Plant : MonoBehaviour
     [SerializeField] private GameObject _dropCount;
     public float dropCountOffsetX;
     public float dropCountOffsetY;
-    private GameObject _countText;
+    // private GameObject _countText;
     
     public PlantSpawner spawner;
     private WateringGame _game;
@@ -51,7 +51,7 @@ public class Plant : MonoBehaviour
         dropCountOffsetX = spawner.dropCountOffsetX;
         dropCountOffsetY = spawner.dropCountOffsetY;
         
-        _countText = Instantiate(_dropCount, canvas.transform);
+        // _countText = Instantiate(_dropCount, canvas.transform);
     }
 
     void Start()
@@ -69,9 +69,9 @@ public class Plant : MonoBehaviour
         currentSpeed = _game.lever.curSpeed;
         
         transform.position += Vector3.right * currentSpeed * Time.deltaTime; // 이동
-        _countText.transform.position = Camera.main.WorldToScreenPoint(
-            new Vector3(transform.position.x + dropCountOffsetX, transform.position.y + dropCountOffsetY,0));
-        _countText.GetComponent<TextMeshProUGUI>().text = waterAmount.ToString();
+        // _countText.transform.position = Camera.main.WorldToScreenPoint(
+            // new Vector3(transform.position.x + dropCountOffsetX, transform.position.y + dropCountOffsetY,0));
+        // _countText.GetComponent<TextMeshProUGUI>().text = waterAmount.ToString();
         if (hasPriority)
         {
             spawner.beltAnimator.SetFloat("beltSpeed", currentSpeed);
@@ -147,6 +147,6 @@ public class Plant : MonoBehaviour
         isStop = true;
         // _rb.velocity = Vector2.zero;
         _rb.constraints = RigidbodyConstraints2D.FreezeAll;
-        Destroy(_countText, 1f);
+        // Destroy(_countText, 1f);
     }
 }
