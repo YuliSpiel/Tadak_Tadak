@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
     
     public int totalMiniGames; // 총 게임수
     private int curGameIndex = 0; // 현재게임 인덱스
-
+    public int CurGameIndex => curGameIndex;
+    
     private int _score; // 백킹필드
     public int Score
     {
