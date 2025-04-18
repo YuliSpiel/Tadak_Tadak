@@ -21,6 +21,8 @@ public class KiwiMiniGame : BaseMiniGame
     
     //ui
     [SerializeField] private GameObject successPanel;
+
+    [SerializeField] private int rewardScore = 10;
     
     
     
@@ -33,6 +35,7 @@ public class KiwiMiniGame : BaseMiniGame
             if (leftKiwi.CurrentSprite == rightKiwi.CurrentSprite)
             {
                 Debug.Log("성공");
+                GameManager.Instance.AddScore(rewardScore);
                 EndGame();
             }
             else
