@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace MiniGame
 {
-    public abstract class BaseMiniGame : MonoBehaviour
+    public abstract class BaseMiniGame : MinigameBase
     {
 
         #region Singleton
@@ -71,23 +71,17 @@ namespace MiniGame
             isSuccess = false;
             isFinished = false;
         }
-
-        //게임 시작
-        public abstract void StartGame();
+        
 
         //매 프레임 처리
         public abstract void UpdateGame();
 
-        //게임 종료 처리
-        public abstract void EndGame();
-
-
-
+        
         //테스트를 위한 임시 이벤트 함수 (GameManager로 이동 예정
         private void Start()
         {
-            Init();
-            StartGame();
+            //Init();
+            // StartGame();
         }
 
         private void Update()

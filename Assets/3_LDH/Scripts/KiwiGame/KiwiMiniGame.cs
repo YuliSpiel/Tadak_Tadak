@@ -42,25 +42,28 @@ public class KiwiMiniGame : BaseMiniGame
         player = kiwiPlayerAction as IPlayer;
         base.Init();
         
-
     }
     
     public override void StartGame()
     {
-        Debug.Log("게임을 시작합니다.");
+        Init();
     }
 
     public override void UpdateGame()
     {
         CheckSuccessCondition();
     }
-    
+
+
+
     public override void EndGame()
     {
         isSuccess = true;
         isFinished = true;
         
-        successPanel?.SetActive(true);
+        // successPanel?.SetActive(true);
+        
+        CompleteGame();
     }
     
     #endregion
