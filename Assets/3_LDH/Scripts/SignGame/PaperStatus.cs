@@ -56,7 +56,7 @@ public class PaperStatus : MonoBehaviour
         
     }
 
-    private void OnSubmit()
+    public void OnSubmit()
     {
         foreach (var sign in GetComponentsInChildren<SignLine>())
         {

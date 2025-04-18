@@ -151,6 +151,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4758805266002462470, guid: 51cdf5eb6486e42ff8fe4d160f3f5246, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5958887206643713276, guid: 51cdf5eb6486e42ff8fe4d160f3f5246, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -253,6 +257,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7294460372272688463, guid: 51cdf5eb6486e42ff8fe4d160f3f5246, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8339981040640037361, guid: 51cdf5eb6486e42ff8fe4d160f3f5246, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8996162345219397288, guid: 51cdf5eb6486e42ff8fe4d160f3f5246, type: 3}

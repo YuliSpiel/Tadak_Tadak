@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/KJY_CatGameTestScene.unity
     guid: 5342265e1709d4619924e8319c5b57b9
+  - enabled: 1
+    path: Assets/Scene/3_EndScene.unity
+    guid: aaa9cc12f96954b959598bd642d527f4
   m_configObjects: {}
