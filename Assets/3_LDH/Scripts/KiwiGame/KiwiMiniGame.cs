@@ -6,7 +6,7 @@ using DG.Tweening;
 public class KiwiMiniGame : BaseMiniGame
 {
     //싱글톤
-    public static new KiwiMiniGame Manager => BaseMiniGame.Manager as KiwiMiniGame;
+    public static KiwiMiniGame Manager => GameManager.Instance.minigameManager.CurMinigame.GetComponent<KiwiMiniGame>();
     
     //플레이어
     [SerializeField] private KiwiPlayer kiwiPlayerAction;
