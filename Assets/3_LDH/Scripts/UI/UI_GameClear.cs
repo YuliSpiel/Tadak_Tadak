@@ -11,7 +11,7 @@ public class UI_GameClear : MonoBehaviour
 
     private Image ui_gameClearBg;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         ui_gameClearBg = GetComponent<Image>();
     }

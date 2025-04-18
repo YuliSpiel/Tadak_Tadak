@@ -10,14 +10,14 @@ public class UI_GameOver : MonoBehaviour
     private Image ui_gameOverBg;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         ui_gameOverBg = GetComponent<Image>();
     }
 
     private void OnEnable()
     {
-        ui_gameOverBg.sprite = gameOverBgList[GameManager.Instance.CurGameIndex];
+        ui_gameOverBg.sprite = gameOverBgList[GameManager.Instance.CurGameIndex-1];
     }
 
    

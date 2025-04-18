@@ -41,10 +41,13 @@ public class PaperSubmitter : MonoBehaviour, IExecutable
         
         //종이(현재 종이) 제출 애니메이션 실행
         PaperStatus paperStatus = SignMiniGame.Manager.CurrentPaper.GetComponent<PaperStatus>();
+        paperStatus.OnSubmit();
+        
         if (paperStatus.State== PaperState.Signing)
         {
             paperStatus.State = PaperState.Torn;
         }
+        
         paperStatus.GetComponent<Animator>().SetTrigger("Submit");
         
     }
