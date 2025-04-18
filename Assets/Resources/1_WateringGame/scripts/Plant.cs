@@ -76,8 +76,6 @@ public class Plant : MonoBehaviour
         {
             spawner.beltAnimator.SetFloat("beltSpeed", currentSpeed);
         }
-        // TODO: 화분 스피드 관리를 컨베이어 벨트에서 하도록 리팩토링 필요(애니메이터 불값 중복호출 문제)
-        // 과연 최선일까요? 일단 야매로 막아뒀삼
     }
     
     void OnTriggerEnter2D(Collider2D other)
