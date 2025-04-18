@@ -68,7 +68,7 @@ public class PaperStatus : MonoBehaviour
         }
         
         //종이 제출이 끝났음을 알림
-        SignMiniGame.Manager.OnPaperSubmitted(this);
+        SignMiniGame.Manager.HandlePaperSubmission(this);
         
     }
 

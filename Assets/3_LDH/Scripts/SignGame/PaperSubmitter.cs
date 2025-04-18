@@ -17,6 +17,9 @@ public class PaperSubmitter : MonoBehaviour, IExecutable
         leftHand = this.gameObject;
         anim_leftHand = leftHand.GetComponent<Animator>();
         isSubmitting = false;
+
+        SignMiniGame.Manager.OnTurnInit -= OnSubmitEnd;
+        SignMiniGame.Manager.OnTurnInit += OnSubmitEnd;
     }
 
     public void Execute()
@@ -28,6 +31,7 @@ public class PaperSubmitter : MonoBehaviour, IExecutable
         }
         isSubmitting = true;
         ExecuteSubmission();
+        
     }
 
     private void ExecuteSubmission()
@@ -45,7 +49,7 @@ public class PaperSubmitter : MonoBehaviour, IExecutable
         
     }
     
-    private void OnSubmitAnimationEnd()
+    private void OnSubmitEnd()
     {
         isSubmitting = false;
     }
