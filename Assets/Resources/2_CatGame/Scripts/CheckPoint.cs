@@ -12,7 +12,7 @@ public class CheckPoint : MonoBehaviour
             Debug.Log("충돌햇서요");
             Destroy(gameObject);
             GameManager.Instance.Score += 10;
-            _game.Invoke("EndGame", 3f);
+            _game.Invoke("EndGame", 2f);
         }
     }
 }

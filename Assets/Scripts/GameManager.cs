@@ -57,7 +57,12 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
-    
+
+    void Start()
+    {
+        SoundManager.Instance.PlayBGM(0);
+    }
+
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
