@@ -7,6 +7,8 @@ TagManager:
   - Plant
   - WaterDrop
   - Judges
+  - Cat
+  - Basket
   layers:
   - Default
   - TransparentFX

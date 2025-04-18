@@ -7,7 +7,7 @@ using UnityEngine;
 public class Cat : MonoBehaviour
 {
     private Rigidbody2D _rb;
-    public bool isActive;
+    public bool isActive; // 스폰되고, 쌓이기 전까지. 떨어지면 다시 active
     
     public float catDropDrag;
     public float catDropGravity;
@@ -29,14 +29,17 @@ public class Cat : MonoBehaviour
 
     void Update()
     {
-        if (isActive&&_rb!=null&&Input.GetKeyDown(KeyCode.LeftShift))
+        if (isActive)
         {
-            Drop();
-        }
+            if (_rb != null && Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                Drop();
+            }
 
-        if (isActive&&transform.position.y < -6)
-        {
-            LosePoint();
+            if (transform.position.y < -6)
+            {
+                LosePoint();
+            }
         }
     }
 
@@ -46,7 +49,7 @@ public class Cat : MonoBehaviour
         {
             isActive = false;
             _rb.gravityScale = 3f;
-            _rb.drag =  0.01f;
+            _rb.drag =  1f;
         }
         
         else if (collision.gameObject.CompareTag("Cat"))
@@ -54,6 +57,19 @@ public class Cat : MonoBehaviour
             isActive = false;
             _rb.gravityScale = catStaticGravity;
             _rb.drag = catStaticDrag;
+        }
+    }
+    
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Basket"))
+        {
+            isActive = true;
+        }
+        
+        else if (collision.gameObject.CompareTag("Cat"))
+        {
+            isActive = true;
         }
     }
 
