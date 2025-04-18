@@ -123,6 +123,16 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!82 &224651789 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5194333926131857786, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
+  m_PrefabInstance: {fileID: 4442360275529134622}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &937446814 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 833927660860649472, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
+  m_PrefabInstance: {fileID: 4442360275529134622}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1075404288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -273,6 +283,70 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 833927660860649472, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -5223914722190279063, guid: ba378887f2867485392a1c84df47598e, type: 2}
+    - target: {fileID: 1266026117678009203, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
+      propertyPath: _BGMAudio
+      value: 
+      objectReference: {fileID: 937446814}
+    - target: {fileID: 1266026117678009203, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
+      propertyPath: _SFXAudio
+      value: 
+      objectReference: {fileID: 224651789}
+    - target: {fileID: 1266026117678009203, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
+      propertyPath: _bgms.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266026117678009203, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
+      propertyPath: _sfxs.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266026117678009203, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
+      propertyPath: _bgms.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 47f45ef7b5767674393cc401fc325705, type: 3}
+    - target: {fileID: 1266026117678009203, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
+      propertyPath: _bgms.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2cebe5ef59f447d4d803665e3ecf1a2f, type: 3}
+    - target: {fileID: 1266026117678009203, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
+      propertyPath: _sfxs.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4345fee3fb20cf74aa45e5b8f2fb226d, type: 3}
+    - target: {fileID: 1266026117678009203, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
+      propertyPath: _sfxs.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: f13a9120cd803463bbebeb4b21ccd03c, type: 3}
+    - target: {fileID: 1266026117678009203, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
+      propertyPath: _sfxs.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2b84a3f4ac8fa4815a82f79fb25da4e1, type: 3}
+    - target: {fileID: 1266026117678009203, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
+      propertyPath: _sfxs.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: ba597826747f04eeaa252e9de19990a7, type: 3}
+    - target: {fileID: 1266026117678009203, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
+      propertyPath: _sfxs.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4345fee3fb20cf74aa45e5b8f2fb226d, type: 3}
+    - target: {fileID: 1266026117678009203, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
+      propertyPath: _sfxs.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 52007178b130848e09beec207aafc011, type: 3}
+    - target: {fileID: 1266026117678009203, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
+      propertyPath: _sfxs.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 079389f1b66464beebd72d3d3b6970fe, type: 3}
+    - target: {fileID: 1266026117678009203, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
+      propertyPath: _sfxs.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3f92eb4937f4e432ab033c649738a687, type: 3}
+    - target: {fileID: 1266026117678009203, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
+      propertyPath: _sfxs.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: eb8b85795fa4cfd4882479bbe3adb6df, type: 3}
     - target: {fileID: 4755547957461106638, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -317,6 +391,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5194333926131857786, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -7298626288336147389, guid: ba378887f2867485392a1c84df47598e, type: 2}
     - target: {fileID: 5866812452757604634, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
       propertyPath: m_Name
       value: SoundManager

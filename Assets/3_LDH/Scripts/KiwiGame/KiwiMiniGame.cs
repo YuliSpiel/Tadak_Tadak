@@ -35,12 +35,14 @@ public class KiwiMiniGame : BaseMiniGame
             if (leftKiwi.CurrentSprite == rightKiwi.CurrentSprite)
             {
                 Debug.Log("성공");
+                SoundManager.Instance.PlaySFX(ESFXs.GrowSFX);
                 GameManager.Instance.AddScore(rewardScore);
                 EndGame();
             }
             else
             {
                 Debug.Log("실패");
+                SoundManager.Instance.PlaySFX(ESFXs.FailSFX);
                 GameManager.Instance.Life--;
             }
 

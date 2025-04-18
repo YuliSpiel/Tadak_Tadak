@@ -9,6 +9,9 @@ public class BonusPoint : MonoBehaviour
     {
         if (collision.CompareTag("Cat"))
         {
+            SoundManager.Instance.PlaySFX(ESFXs.Cat3SFX);
+            SoundManager.Instance.PlaySFX(ESFXs.GrowSFX);
+
             GameManager.Instance.Score += 5;
             Destroy(gameObject);
         }

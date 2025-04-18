@@ -124,6 +124,7 @@ public class Plant : MonoBehaviour
         if (waterAmount == _game.minRange) 
         {
             Grow();
+            SoundManager.Instance.PlaySFX(ESFXs.GrowSFX);
         }
     }
 
