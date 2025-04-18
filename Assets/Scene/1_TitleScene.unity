@@ -301,7 +301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1266026117678009203, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
       propertyPath: _sfxs.Array.size
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1266026117678009203, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
       propertyPath: _bgms.Array.data[0]
@@ -347,6 +347,18 @@ PrefabInstance:
       propertyPath: _sfxs.Array.data[8]
       value: 
       objectReference: {fileID: 8300000, guid: eb8b85795fa4cfd4882479bbe3adb6df, type: 3}
+    - target: {fileID: 1266026117678009203, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
+      propertyPath: _sfxs.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: adcbbbae313cb40978e30faf82938987, type: 3}
+    - target: {fileID: 1266026117678009203, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
+      propertyPath: _sfxs.Array.data[10]
+      value: 
+      objectReference: {fileID: 8300000, guid: bf7c660e4b34144d1a60a5063a3b1f4a, type: 3}
+    - target: {fileID: 1266026117678009203, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
+      propertyPath: _sfxs.Array.data[11]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a30cc12e9d84664fbfdc103bfab870a, type: 3}
     - target: {fileID: 4755547957461106638, guid: f2d84e2a78f464c469767c03231e8cff, type: 3}
       propertyPath: m_RootOrder
       value: 3

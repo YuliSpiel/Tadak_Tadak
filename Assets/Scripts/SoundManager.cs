@@ -21,6 +21,7 @@ public enum ESFXs
     FailSFX,
     LoseSFX,
     WinSFX,
+    LeverSFX,
 }
 
 public class SoundManager : MonoBehaviour

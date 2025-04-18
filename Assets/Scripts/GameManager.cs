@@ -88,6 +88,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void StartGameSession()
     {
+        Cursor.visible = false;
         curGameIndex = 0;
         Score = 0;
         Life = 5;
@@ -125,6 +126,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void EndGameSession()
     {
+        Cursor.visible = true;
         SoundManager.Instance.StopBGM();
         SoundManager.Instance.PlaySFX(ESFXs.WinSFX);
         Debug.Log("게임세션 종료");
@@ -139,6 +141,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void GameOver()
     {
+        Cursor.visible = true;
         SoundManager.Instance.StopBGM();
         SoundManager.Instance.PlaySFX(ESFXs.LoseSFX);
         Time.timeScale = 0;
