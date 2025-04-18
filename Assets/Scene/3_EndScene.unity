@@ -191,51 +191,6 @@ Transform:
   m_Father: {fileID: 7481316584194045213}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1755364934
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1755364936}
-  - component: {fileID: 1755364935}
-  m_Layer: 0
-  m_Name: EndSceneManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1755364935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755364934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 323ebdf9433bc47b88c490ec09786867, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_GoToTitleButton: {fileID: 9090781905480294216}
---- !u!4 &1755364936
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755364934}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 509.6397, y: 644.3959, z: 0.53062993}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!222 &33761418275165442
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -471,7 +426,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9090781905480294215}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9090781905480294216}
+        m_TargetAssemblyTypeName: OpenTitleScene, Assembly-CSharp
+        m_MethodName: LoadTitleScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5059906270323148033
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,6 +749,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5059906270323148033}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d57dfdcf1b224673ad7d2a5ddc56a245, type: 3}
+  m_Script: {fileID: 11500000, guid: 24712f4fe17b244f9b0319d14c8b0796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
