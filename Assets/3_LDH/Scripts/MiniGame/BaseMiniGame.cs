@@ -49,7 +49,7 @@ namespace MiniGame
 
         #region Game Flags
 
-        protected bool isFinished = false;
+        protected bool isFinished = true;
         protected bool isSuccess = false;
 
         public bool IsSuccess => isSuccess;
