@@ -42,19 +42,20 @@ namespace MiniGame
                 currentPaper = value;
             }
         }
-
-        public event Action<PaperStatus> PaperSubmitted;
         
         #endregion
         
         //정답 판정
         [SerializeField] private bool isSuccess = false;
         
-        //Balloon Emotion UI
-        [SerializeField] private UI_BalloonEmotion balloonEmotion;
+        
+        //event
+        public event Action<bool> OnPaperSubmitted;
+        public event Action OnTurnInit;
+        
         
 
-        public void OnPaperSubmitted(PaperStatus paper)
+        public void HandlePaperSubmission(PaperStatus paper)
         {
             if (currentPaper != paper.gameObject)
             {
@@ -78,19 +79,17 @@ namespace MiniGame
             
             Debug.Log($"issuccess : {isSuccess}");
             
-            //ballon emotion 설정
-            balloonEmotion.ChangeEmotion(isSuccess);
-            
+            OnPaperSubmitted?.Invoke(isSuccess);
+       
             //새로운 종이 생성
             SpawnNewPaper();
-            //그 외 이벤트 호출
-            PaperSubmitted?.Invoke(paper);
+            
             //기존 종이 파과
             Destroy(paper.gameObject, 0.3f);
             
             
             //게임 턴 init
-            Invoke("InitGameTrun",1f);
+            Invoke("InitGameTurn",1f);
         }
 
         private void SpawnNewPaper()
@@ -137,12 +136,9 @@ namespace MiniGame
         }
 
 
-        public void InitGameTrun()
+        public void InitGameTurn()
         {
-            //ui 초기화
-            balloonEmotion.ResetEmotion();
-            
-            
+            OnTurnInit?.Invoke();
         }
         #endregion
    
