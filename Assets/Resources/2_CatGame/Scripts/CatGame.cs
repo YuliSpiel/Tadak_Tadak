@@ -25,6 +25,6 @@ public class CatGame : MinigameBase
 
     public override void EndGame()
     {
-        
+        CompleteGame();
     }
 }
