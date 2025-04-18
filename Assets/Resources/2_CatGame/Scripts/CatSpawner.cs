@@ -25,8 +25,8 @@ public class CatSpawner : MonoBehaviour
         for (int i = 0; i < _catCount; i++)
         {
             Debug.Log("Spawning cat");
-            _game.cats[i] = Instantiate(_cats[Random.Range(0, _cats.Count)], new Vector3(Random.Range(-6f, 6f), transform.position.y), Quaternion.identity);
-            while (_game.cats[i].isActive)
+            _game.cats[i] = Instantiate(_cats[i], new Vector3(Random.Range(-4f, 4f), transform.position.y), Quaternion.identity, _game.transform);
+            while (_game.cats[i].isActive||_game.cats[i].transform.position.y>0.6)
             {
                 yield return null;
             }

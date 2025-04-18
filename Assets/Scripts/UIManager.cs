@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviour
     /// <summary>
     /// 게임매니저의 프로퍼티 상에서 자동 호출되므로 직접 호출은 지양 바랍니다 
     /// </summary>
-    /// <param name="points">점수</param>
+    /// <param name="score">점수</param>
     public void UpdateScore(int score)
     {
         scoreText.text = "Score: " + score;
