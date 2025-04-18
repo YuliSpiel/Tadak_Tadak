@@ -46,6 +46,17 @@ namespace MiniGame
         //protected IPlayer player1;
         //protected IPlayer player2;
 
+
+        #region Game Flags
+
+        protected bool isFinished = false;
+        protected bool isSuccess = false;
+
+        public bool IsSuccess => isSuccess;
+        public bool IsFinished => isFinished;
+        
+
+        #endregion
        
 
         //게임 초기화
@@ -56,7 +67,9 @@ namespace MiniGame
             player1Config.RegisterKeyUpActions(player.GetKeyDownActionMap());
             player2Config.RegisterKeyDownActions(player.GetKeyDownActionMap());
             player2Config.RegisterKeyUpActions(player.GetKeyDownActionMap());
-            
+
+            isSuccess = false;
+            isFinished = false;
         }
 
         //게임 시작
@@ -64,9 +77,6 @@ namespace MiniGame
 
         //매 프레임 처리
         public abstract void UpdateGame();
-
-        //완료 여부
-        public abstract bool IsGameFinished();
 
         //게임 종료 처리
         public abstract void EndGame();
@@ -82,6 +92,12 @@ namespace MiniGame
 
         private void Update()
         {
+            if (isFinished)
+            {
+                return;
+            }
+            player1Config.HandleInput();
+            player2Config.HandleInput();
             UpdateGame();
         }
     }

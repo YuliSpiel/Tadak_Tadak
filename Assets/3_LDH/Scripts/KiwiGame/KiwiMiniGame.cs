@@ -16,19 +16,19 @@ public class KiwiMiniGame : BaseMiniGame
     [SerializeField] private KiwiController rightKiwi;
     
     
+    //ui
+    [SerializeField] private GameObject successPanel;
     
-    //정답 판정
-    [SerializeField] private bool isSuccess = false;
-
-
-    private void HandleKiwiState()
+    
+    
+    private void CheckSuccessCondition()
     {
         if (!leftKiwi.IsStopped || !rightKiwi.IsStopped) return;
 
         if (leftKiwi.CurrentSprite == rightKiwi.CurrentSprite)
         {
             Debug.Log("성공");
-            isSuccess = true;
+            EndGame();
         }
     }
     
@@ -52,20 +52,15 @@ public class KiwiMiniGame : BaseMiniGame
 
     public override void UpdateGame()
     {
-        player1Config.HandleInput();
-        player2Config.HandleInput();
-        
-        HandleKiwiState();
+        CheckSuccessCondition();
     }
-
-    public override bool IsGameFinished()
-    {
-        return false;
-    }
-
+    
     public override void EndGame()
     {
+        isSuccess = true;
+        isFinished = true;
         
+        successPanel?.SetActive(true);
     }
     
     #endregion
