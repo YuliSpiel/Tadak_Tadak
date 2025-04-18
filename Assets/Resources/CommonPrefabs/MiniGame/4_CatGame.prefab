@@ -538,7 +538,7 @@ GameObject:
   - component: {fileID: 2118146792143780665}
   - component: {fileID: 928446677421360953}
   m_Layer: 0
-  m_Name: CatGame
+  m_Name: 4_CatGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
