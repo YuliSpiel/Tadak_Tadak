@@ -32,13 +32,13 @@ public class Basket : MonoBehaviour
     {
         _moveDir = 0;
         
-        if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.RightShift))
         {
             _moveDir = 0;
             return;
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             if (_isOnLeftBorder)
             {
@@ -54,7 +54,7 @@ public class Basket : MonoBehaviour
 
         }
 
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightShift))
         {
             if (_isOnRightBorder)
             {

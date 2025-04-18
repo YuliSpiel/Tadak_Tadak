@@ -125,6 +125,8 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void EndGameSession()
     {
+        SoundManager.Instance.StopBGM();
+        SoundManager.Instance.PlaySFX(ESFXs.WinSFX);
         Debug.Log("게임세션 종료");
         if (uiManager != null)
         {
@@ -137,6 +139,8 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void GameOver()
     {
+        SoundManager.Instance.StopBGM();
+        SoundManager.Instance.PlaySFX(ESFXs.LoseSFX);
         Time.timeScale = 0;
         Debug.Log("게임 중도 종료");        
         if (uiManager != null)
@@ -156,12 +160,14 @@ public class GameManager : MonoBehaviour
     public void LoadTitleScene()
     {
         SceneManager.LoadScene(0);
+        SoundManager.Instance.StopSFX();
         SoundManager.Instance.PlayBGM(EBGMs.TitleBGM);
     }
     
     public void LoadGameScene()
     {
         SceneManager.LoadScene(1);
+        SoundManager.Instance.StopSFX();
         SoundManager.Instance.PlayBGM(EBGMs.GameBGM);
     }
 }

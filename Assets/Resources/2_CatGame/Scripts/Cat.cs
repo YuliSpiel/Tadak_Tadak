@@ -25,7 +25,7 @@ public class Cat : MonoBehaviour
     private void OnEnable()
     {
         isActive = true;
-        FreezeY();
+        // FreezeY();
     }
 
     void Update()

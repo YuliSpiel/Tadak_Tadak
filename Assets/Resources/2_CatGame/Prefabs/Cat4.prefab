@@ -100,9 +100,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 70
-  m_LinearDrag: 0
+  m_LinearDrag: 0.1
   m_AngularDrag: 0.1
-  m_GravityScale: 1
+  m_GravityScale: 0.1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -127,8 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
-  catDropDrag: 0.5
-  catDropGravity: 0.5
+  catDropDrag: 0.1
+  catDropGravity: 0.1
   catStaticDrag: 1
   catStaticGravity: 10
 --- !u!61 &4562714714444084404

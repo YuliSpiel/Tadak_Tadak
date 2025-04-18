@@ -15,5 +15,6 @@ public class OpenTitleScene : MonoBehaviour
     public void LoadEndScene()
     {
         SceneManager.LoadScene("3_EndScene");
+        SoundManager.Instance.PlayBGM(0);
     }
 }
