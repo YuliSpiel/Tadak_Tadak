@@ -5,14 +5,20 @@ using UnityEngine;
 public enum EBGMs
 {
     TitleBGM,
-    Stage1BGM
+    GameBGM,
 }
     
 public enum ESFXs
 {
     SelectSFX,
-    CancelSFX,
-    StartSFX,
+    SignSFX,
+    PaperSFX,
+    CrowdSFX,
+    GrowSFX,
+    Cat1SFX,
+    Cat2SFX,
+    Cat3SFX,
+    FailSFX,
 }
 
 public class SoundManager : MonoBehaviour

@@ -34,6 +34,7 @@ namespace MiniGame
         {
             Debug.Log("종이 가져오기!");
             leftHand.GetComponent<IExecutable>().Execute();
+            SoundManager.Instance.PlaySFX(ESFXs.PaperSFX);
 
         }
         
@@ -41,6 +42,7 @@ namespace MiniGame
         {
             Debug.Log("싸인하기!");
             rightHand.GetComponent<IExecutable>().Execute();
+            SoundManager.Instance.PlaySFX(ESFXs.SignSFX);
         }
         
 

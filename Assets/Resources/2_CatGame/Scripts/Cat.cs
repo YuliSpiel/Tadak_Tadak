@@ -8,6 +8,7 @@ public class Cat : MonoBehaviour
 {
     private Rigidbody2D _rb;
     public bool isActive; // 스폰되고, 쌓이기 전까지. 떨어지면 다시 active
+    private bool _isOnceStacked;
     
     public float catDropDrag;
     public float catDropGravity;
@@ -38,6 +39,7 @@ public class Cat : MonoBehaviour
 
             if (transform.position.y < -6)
             {
+                SoundManager.Instance.PlaySFX(ESFXs.Cat2SFX);
                 LosePoint();
             }
         }
@@ -47,14 +49,24 @@ public class Cat : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Basket"))
         {
+            if (!_isOnceStacked)
+            {
+                SoundManager.Instance.PlaySFX(ESFXs.Cat1SFX);
+            }
             isActive = false;
+            _isOnceStacked = true;
             _rb.gravityScale = 3f;
             _rb.drag =  1f;
         }
         
         else if (collision.gameObject.CompareTag("Cat"))
         {
+            if (!_isOnceStacked)
+            {
+                SoundManager.Instance.PlaySFX(ESFXs.Cat1SFX);
+            }
             isActive = false;
+            _isOnceStacked = true;
             _rb.gravityScale = catStaticGravity;
             _rb.drag = catStaticDrag;
         }

@@ -105,10 +105,12 @@ public class UI_BalloonEmotion : MonoBehaviour
         if (isSuccess)
         {
             anim_emotion.SetInteger("Result", 1);
+            SoundManager.Instance.PlaySFX(ESFXs.GrowSFX);
         }
         else
         {
             anim_emotion.SetInteger("Result", -1);
+            SoundManager.Instance.PlaySFX(ESFXs.FailSFX);
         }
     }
 

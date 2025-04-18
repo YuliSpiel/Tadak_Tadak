@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        SoundManager.Instance.PlayBGM(0);
+        SoundManager.Instance.PlayBGM(EBGMs.TitleBGM);
     }
     
     private void OnDisable()
@@ -156,10 +156,12 @@ public class GameManager : MonoBehaviour
     public void LoadTitleScene()
     {
         SceneManager.LoadScene(0);
+        SoundManager.Instance.PlayBGM(EBGMs.TitleBGM);
     }
     
     public void LoadGameScene()
     {
         SceneManager.LoadScene(1);
+        SoundManager.Instance.PlayBGM(EBGMs.GameBGM);
     }
 }

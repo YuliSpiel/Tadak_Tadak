@@ -170,6 +170,7 @@ namespace MiniGame
         public override void StartGame()
         {
            Init();
+           // SoundManager.Instance.PlaySFX(ESFXs.CrowdSFX);
         }
 
         public override void UpdateGame()
@@ -183,7 +184,7 @@ namespace MiniGame
             isFinished = true;
             successPanel?.SetActive(true);
             StartCoroutine(CompleteGameWithDelay(1.5f));
-            
+            SoundManager.Instance.StopSFX();
         }
 
 

@@ -9,7 +9,9 @@ public class CheckPoint : MonoBehaviour
     {
         if (col.CompareTag("Cat"))
         {
-            Debug.Log("충돌햇서요");
+            SoundManager.Instance.PlaySFX(ESFXs.Cat3SFX);
+            SoundManager.Instance.PlaySFX(ESFXs.GrowSFX);
+
             Destroy(gameObject);
             GameManager.Instance.Score += 10;
             _game.Invoke("EndGame", 3f);
