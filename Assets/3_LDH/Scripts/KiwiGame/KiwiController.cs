@@ -32,7 +32,6 @@ public class KiwiController : MonoBehaviour, IExecutable
 
     public void Execute()
     {
-        Debug.Log("키 눌림");
         anim_kiwi.speed = anim_kiwi.speed == 0f ? 1f : 0f;
     }
 }
