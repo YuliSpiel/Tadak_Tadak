@@ -497,11 +497,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 250816241698861569, guid: 62412f45fbc0e4e1eab5ff64dbcb6958, type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.8392157
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 250816241698861569, guid: 62412f45fbc0e4e1eab5ff64dbcb6958, type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.9882353
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 250816241698861569, guid: 62412f45fbc0e4e1eab5ff64dbcb6958, type: 3}
       propertyPath: m_BackGroundColor.r

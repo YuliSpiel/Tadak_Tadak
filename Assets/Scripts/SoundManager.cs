@@ -5,7 +5,7 @@ using UnityEngine;
 public enum EBGMs
 {
     TitleBGM,
-    GameBGM
+    Stage1BGM
 }
     
 public enum ESFXs
