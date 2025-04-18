@@ -8,7 +8,6 @@ public class MinigameManager : MonoBehaviour
     public Transform minigameContainer; // 미니게임이 로드될 부모 오브젝트
 
     private GameObject curMinigame; // 현재 미니게임 프리팹
-    public GameObject CurMinigame => curMinigame;
 
     void Awake()
     {

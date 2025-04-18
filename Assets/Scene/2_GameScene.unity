@@ -184,26 +184,22 @@ PrefabInstance:
       objectReference: {fileID: 1053898162}
     - target: {fileID: 1002626973560244753, guid: f4c0fb0320eee42b194737ebf3eb6045, type: 3}
       propertyPath: minigamePrefabs.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1002626973560244753, guid: f4c0fb0320eee42b194737ebf3eb6045, type: 3}
       propertyPath: minigamePrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 7111653042319884604, guid: 4a3cda45f1a19496a921c6ecd9aedf79, type: 3}
+      objectReference: {fileID: 3602054694484763200, guid: 317bc5af87ffa45e486ce1c2041eb9ca, type: 3}
     - target: {fileID: 1002626973560244753, guid: f4c0fb0320eee42b194737ebf3eb6045, type: 3}
       propertyPath: minigamePrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 3602054694484763200, guid: 317bc5af87ffa45e486ce1c2041eb9ca, type: 3}
+      objectReference: {fileID: 7696218372312737581, guid: 5f467d36c675040e3843832116c8124e, type: 3}
     - target: {fileID: 1002626973560244753, guid: f4c0fb0320eee42b194737ebf3eb6045, type: 3}
       propertyPath: minigamePrefabs.Array.data[2]
       value: 
-      objectReference: {fileID: 7696218372312737581, guid: 5f467d36c675040e3843832116c8124e, type: 3}
-    - target: {fileID: 1002626973560244753, guid: f4c0fb0320eee42b194737ebf3eb6045, type: 3}
-      propertyPath: minigamePrefabs.Array.data[3]
-      value: 
       objectReference: {fileID: 7696218372312737581, guid: 0cd173f536f414a2a92a6e1dfcbc6c04, type: 3}
     - target: {fileID: 1002626973560244753, guid: f4c0fb0320eee42b194737ebf3eb6045, type: 3}
-      propertyPath: minigamePrefabs.Array.data[4]
+      propertyPath: minigamePrefabs.Array.data[3]
       value: 
       objectReference: {fileID: 4489562141165910782, guid: 5a89dcb28a8854b4b838525bcc0ecd2c, type: 3}
     - target: {fileID: 2910401305247819958, guid: f4c0fb0320eee42b194737ebf3eb6045, type: 3}
