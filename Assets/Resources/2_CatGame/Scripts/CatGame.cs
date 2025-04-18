@@ -12,8 +12,11 @@ public class CatGame : MinigameBase
     public float CatStaticDrag;
     public float CatStaticGravity;
     
+    [SerializeField] GameObject _successPanel;
+    
     void Start()
     {
+        _successPanel.SetActive(false);
         _catSpawner = GetComponentInChildren<CatSpawner>();
         StartGame();
     }
@@ -26,5 +29,10 @@ public class CatGame : MinigameBase
     public override void EndGame()
     {
         CompleteGame();
+    }
+
+    public void ShowSuccessPanel()
+    {
+        _successPanel.SetActive(true);
     }
 }

@@ -23,7 +23,7 @@ public class Plant : MonoBehaviour
     private Rigidbody2D _rb;
     
     public Canvas canvas;
-
+    
     // UI 관련
     [SerializeField] private GameObject _dropCount;
     public float dropCountOffsetX;
@@ -82,35 +82,30 @@ public class Plant : MonoBehaviour
     {
         if  (other.CompareTag("Judges"))
         {
-            Stop();
-            if (waterAmount >= _game.minRange && waterAmount <= _game.maxRange)
+            // Stop();
+            if (waterAmount >= _game.minRange && waterAmount <= _game.maxRange) // 성공
             {
-                // plant.anim.SetBool("Bloom", true);
-                // _canvas.ActivateSuccessText();
                 GameManager.Instance.AddScore(waterAmount); // 스코어 직접 변경해도 됨
+                _game.SuccessCount++;
             }
-            else if (waterAmount < _game.minRange)
+            else if (waterAmount < _game.minRange) // 실패1
             {
-                // _canvas.ActivateWiltText();
-                // plant.anim.SetBool("Wilt", true);
                 GameManager.Instance.Life --;
-                // 시드는 효과 여기서 주기
             }
-            else if (waterAmount > _game.maxRange)
+            else if (waterAmount > _game.maxRange) // 실패2
             {
                 anim.SetBool("Rot", true);
-                // _canvas.ActivateOverwaterText();
                 GameManager.Instance.Life --;
             }
             
             isChecked = true;
             Destroy(gameObject, _game.destroyDelay);
 
-            // 마지막화분의 판정이 완료되었고, 라이프가 남아있다면 게임 종료
-            if (isLast && GameManager.Instance.Life > 0)
-            {
-                _game.Invoke("EndGame", 1f); 
-            }
+            // // 마지막화분의 판정이 완료되었고, 라이프가 남아있다면 게임 종료
+            // if (isLast && GameManager.Instance.Life > 0)
+            // {
+            //     _game.Invoke("EndGame", 1f); 
+            // }
         }
     }
 
