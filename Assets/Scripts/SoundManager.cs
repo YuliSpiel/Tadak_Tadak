@@ -19,6 +19,8 @@ public enum ESFXs
     Cat2SFX,
     Cat3SFX,
     FailSFX,
+    LoseSFX,
+    WinSFX,
 }
 
 public class SoundManager : MonoBehaviour
@@ -46,10 +48,11 @@ public class SoundManager : MonoBehaviour
     
     public void PlayBGM(EBGMs bgm)
     {
-        // if (_BGMAudio.isPlaying)
-        // {
-        //     _BGMAudio.Stop();
-        // }
+        if (_BGMAudio.isPlaying && _BGMAudio.clip == _bgms[(int)bgm])
+        {
+            Debug.Log("이미 같은 BGM이 재생 중입니다. 재생 건너뜀.");
+            return;
+        }
         _BGMAudio.clip = _bgms[(int)bgm];
         _BGMAudio.Play();  
         _BGMAudio.loop = true;
