@@ -90,10 +90,12 @@ public class Plant : MonoBehaviour
             }
             else if (waterAmount < _game.minRange) // 실패1
             {
+                SoundManager.Instance.PlaySFX(ESFXs.FailSFX);
                 GameManager.Instance.Life --;
             }
             else if (waterAmount > _game.maxRange) // 실패2
             {
+                SoundManager.Instance.PlaySFX(ESFXs.FailSFX);
                 anim.SetBool("Rot", true);
                 GameManager.Instance.Life --;
             }

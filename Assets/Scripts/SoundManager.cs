@@ -22,6 +22,8 @@ public enum ESFXs
     LoseSFX,
     WinSFX,
     LeverSFX,
+    WaterSFX,
+    CollectSFX,
 }
 
 public class SoundManager : MonoBehaviour
@@ -29,6 +31,7 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance;
     [SerializeField] private AudioSource _BGMAudio;
     [SerializeField] private AudioSource _SFXAudio;
+    [SerializeField] private AudioSource _SingleSFXAudio;
     
     [SerializeField] private AudioClip[] _bgms;
     [SerializeField] private AudioClip[] _sfxs;
@@ -81,5 +84,16 @@ public class SoundManager : MonoBehaviour
     public void StopSFX()
     {
         _SFXAudio.Stop();
+    }
+
+    public void PlayOneSFX(ESFXs sfx)
+    {
+        _SingleSFXAudio.clip = _sfxs[(int)sfx];
+        _SingleSFXAudio.Play();
+    }
+    
+    public void StopOneSFX()
+    {
+        _SingleSFXAudio.Stop();
     }
 }
