@@ -22,7 +22,7 @@ public class CheckPoint : MonoBehaviour
             
             Destroy(gameObject);
             GameManager.Instance.Score += 10;
-            _game.Invoke("EndGame", 1.5f);
+            _game.Invoke("EndGame", 0.5f);
         }
     }
 }
