@@ -26,7 +26,12 @@ public class WateringCan : MonoBehaviour
     void Update()
     {
         HandleTilt(); // 기울기 조절
-        if (isTilting) SprayWater(); // 기울어지는 중이면 물 뿌리기
+        if (isTilting)
+        {
+            SprayWater();
+        } 
+        // 기울어지는 중이면 물 뿌리기
+
         _waterAnim.SetFloat("WaterAmount", Mathf.Abs(currentAngle));
     }
 
@@ -34,12 +39,18 @@ public class WateringCan : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.RightShift))
         {
+            if (Input.GetKeyDown(KeyCode.RightShift))
+            {
+                SoundManager.Instance.PlayOneSFX(ESFXs.WaterSFX);
+            }
+
             isTilting = true;
             lerpProgress += Time.deltaTime * tiltSpeed; // 목표 각도로 가는 속도 조절
         }
         else
         {
             isTilting = false;
+            SoundManager.Instance.StopOneSFX();
             lerpProgress -= Time.deltaTime * returnSpeed; // 원래 각도로 돌아가는 속도 조절
         }
 
@@ -57,6 +68,7 @@ public class WateringCan : MonoBehaviour
 
         if (hit.collider != null && hit.collider.CompareTag("Plant"))
         {
+            // SoundManager.Instance.PlaySFX(ESFXs.CollectSFX);
             hit.collider.GetComponent<Plant>().WaterReceived(); // 화분이 물을 받음
         }
 
