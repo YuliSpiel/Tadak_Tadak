@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -79,7 +80,35 @@ namespace Utils
             ;
         }
         
-        
+        public static IEnumerator Fade(TMP_Text target, float  start, float end, float fadeTime = 1, float delay = 0, UnityAction action = null)
+        {
+            yield return new WaitForSeconds(delay);
+
+            if (target == null) yield break;
+            
+            //시작 알파 값으로 설정
+            Color color = target.color;
+            color.a = start;
+            target.color = color;
+            
+            float percent = 0;
+            while (percent < 1)
+            {
+                percent += Time.deltaTime / fadeTime;
+                color = target.color;
+                color.a = Mathf.Lerp(start, end, percent);
+                target.color = color;
+
+                yield return null;
+            }
+
+            color.a = end;
+            target.color = color;
+            
+            action?.Invoke();
+            ;
+        }
+
         
     }
 }

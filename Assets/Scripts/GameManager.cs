@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
     
     public int totalMiniGames; // 총 게임수
     private int curGameIndex = 0; // 현재게임 인덱스
-
+    public int CurGameIndex => curGameIndex;
+    
     private int _score; // 백킹필드
     public int Score
     {
@@ -57,6 +58,11 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
+
+    void Start()
+    {
+        SoundManager.Instance.PlayBGM(EBGMs.TitleBGM);
+    }
     
     private void OnDisable()
     {
@@ -82,9 +88,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void StartGameSession()
     {
+        Cursor.visible = false;
         curGameIndex = 0;
         Score = 0;
-        Life = 3;
+        Life = 5;
         NextMinigame();
     }
 
@@ -119,6 +126,9 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void EndGameSession()
     {
+        Cursor.visible = true;
+        SoundManager.Instance.StopBGM();
+        SoundManager.Instance.PlaySFX(ESFXs.WinSFX);
         Debug.Log("게임세션 종료");
         if (uiManager != null)
         {
@@ -131,6 +141,9 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void GameOver()
     {
+        Cursor.visible = true;
+        SoundManager.Instance.StopBGM();
+        SoundManager.Instance.PlaySFX(ESFXs.LoseSFX);
         Time.timeScale = 0;
         Debug.Log("게임 중도 종료");        
         if (uiManager != null)
@@ -150,10 +163,14 @@ public class GameManager : MonoBehaviour
     public void LoadTitleScene()
     {
         SceneManager.LoadScene(0);
+        SoundManager.Instance.StopSFX();
+        SoundManager.Instance.PlayBGM(EBGMs.TitleBGM);
     }
     
     public void LoadGameScene()
     {
         SceneManager.LoadScene(1);
+        SoundManager.Instance.StopSFX();
+        SoundManager.Instance.PlayBGM(EBGMs.GameBGM);
     }
 }

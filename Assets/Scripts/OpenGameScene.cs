@@ -8,5 +8,6 @@ public class OpenGameScene : MonoBehaviour
     public void LoadGameScene()
     {
         GameManager.Instance.LoadGameScene();
+        SoundManager.Instance.PlaySFX(ESFXs.SelectSFX);
     }
 }

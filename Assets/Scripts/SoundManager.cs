@@ -5,14 +5,25 @@ using UnityEngine;
 public enum EBGMs
 {
     TitleBGM,
-    Stage1BGM
+    GameBGM,
 }
     
 public enum ESFXs
 {
     SelectSFX,
-    CancelSFX,
-    StartSFX,
+    SignSFX,
+    PaperSFX,
+    CrowdSFX,
+    GrowSFX,
+    Cat1SFX,
+    Cat2SFX,
+    Cat3SFX,
+    FailSFX,
+    LoseSFX,
+    WinSFX,
+    LeverSFX,
+    WaterSFX,
+    CollectSFX,
 }
 
 public class SoundManager : MonoBehaviour
@@ -20,6 +31,7 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance;
     [SerializeField] private AudioSource _BGMAudio;
     [SerializeField] private AudioSource _SFXAudio;
+    [SerializeField] private AudioSource _SingleSFXAudio;
     
     [SerializeField] private AudioClip[] _bgms;
     [SerializeField] private AudioClip[] _sfxs;
@@ -40,10 +52,11 @@ public class SoundManager : MonoBehaviour
     
     public void PlayBGM(EBGMs bgm)
     {
-        // if (_BGMAudio.isPlaying)
-        // {
-        //     _BGMAudio.Stop();
-        // }
+        if (_BGMAudio.isPlaying && _BGMAudio.clip == _bgms[(int)bgm])
+        {
+            Debug.Log("이미 같은 BGM이 재생 중입니다. 재생 건너뜀.");
+            return;
+        }
         _BGMAudio.clip = _bgms[(int)bgm];
         _BGMAudio.Play();  
         _BGMAudio.loop = true;
@@ -71,5 +84,16 @@ public class SoundManager : MonoBehaviour
     public void StopSFX()
     {
         _SFXAudio.Stop();
+    }
+
+    public void PlayOneSFX(ESFXs sfx)
+    {
+        _SingleSFXAudio.clip = _sfxs[(int)sfx];
+        _SingleSFXAudio.Play();
+    }
+    
+    public void StopOneSFX()
+    {
+        _SingleSFXAudio.Stop();
     }
 }
