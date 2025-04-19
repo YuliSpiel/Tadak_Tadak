@@ -33,7 +33,7 @@ public class WateringGame : MinigameBase
             if (_count == 3)
             {
                 successPanel.SetActive(true);
-                Invoke("EndGame", 2f);
+                Invoke("EndGame", 0.5f);
             }
         }
     }
